@@ -1,7 +1,7 @@
 window.onload=function() {
 
   // get tab container
-  	var container = document.getElementById("tabContainer");
+  	var container = document.getElementById("tabs-container");
 		var tabcon = document.getElementById("tabscontent");
 		//alert(tabcon.childNodes.item(1));
     // set current tab
@@ -54,8 +54,7 @@ function displayPage() {
       
       for (var i = 0; i < thresher_div.length; i++) {
                thresher_div.item(i).style.display="block";
-       }
-       
+       } 
   }
   */
   this.parentNode.setAttribute("data-current",ident);

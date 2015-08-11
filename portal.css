@@ -5,11 +5,7 @@
               display: -webkit-flex;     
               display: flex;              
          }
-
- 
-        /* Column Width */
-
-
+  
 /* Not in use ..............
         .main-content {
               width: 60%;
@@ -41,7 +37,7 @@
             order: 6; 
         }
      
-
+    /* ==== BIG LINKS ==== */
         @import "compass/css3";
 
         .flex-container {
@@ -78,7 +74,7 @@
 
     /* ==== FEATURES ==== */
 
-    .border { border: 2px solid green;}
+    .border { border: 2px solid #ddd;}
 
     /* Basically an iframe wrapper */
     .feature{ 
@@ -138,7 +134,7 @@
 
     /* ==== PADDING ==== */
 
-        /* content */ 
+        /* big links */ 
         .main-content,
         .main-sidebar,
         .main-nav {
@@ -149,17 +145,12 @@
             font-size: 1em; 
         }
 
-        .header {
-            /* background-image: url("blue-sallyport.jpg");  
-            height: 500px; */  
-            /* background-color: purple; /* for testing */
+        /* top of the page */
+        .header { 
+            /* height: 500px; */   
             background-repeat:no-repeat;
             background-size:100% 100%; 
         }
-
-        body {
-            padding: 2em;
-        } 
 
         /* fonts*/ 
         h1, h2 {
@@ -182,46 +173,45 @@
           font-family: Baskerville, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman', serif; 
         }
 
-        a, a:visited {
-          text-transform: uppercase;
-          text-decoration: none;  
-        }
-        
-        .main-content{
-            background: #aaa;
-        }
-
         #main-nav {
             background: #ccc; 
         }
 
-        #main-nav  a { 
-              font-family: sans-serif;
-              font-weight: bold;
-              color: #666;
+        #main-nav  a {  
+            text-transform: uppercase;
+            text-decoration: none; 
+            font-family: sans-serif;
+            font-weight: bold;
+            color: #666;
+
         }
 
        #main-nav a:hover{
-              color: #333;
+            color: #333;
        }
 
         #main-nav {
-            /*background-color: purple; */
+            /*background-color: purple; /* for testing */
         }
+        
+        .main-content{
+            background: #aaa;
+            .flex-item  a, a:visited{
+              color: green; 
+        }  
 
+        .flex-item a:hover {
+            color: black;
+        }
+        }
+ 
 
         .main-sidebar {
             background: #ccc;
         }  
 
         
-        .flex-item  a, a:visited{
-              color: white; 
-        } 
-
-        .flex-item a:hover {
-            color: black;
-        }
+        
 
     /* ==== MISC. ELEMENTS ==== */
 
@@ -231,8 +221,7 @@
         top: 50px; 
     }
 
-    /* Navbar */ 
-
+    /* Navbar */  
     #main-nav li{
         display: inline; 
         list-style-type: none;
