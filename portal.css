@@ -1,0 +1,242 @@
+/* ==== FLEXBOX ==== */ 
+
+        .page-wrap { 
+              display: -ms-flexbox;       
+              display: -webkit-flex;     
+              display: flex;              
+         }
+
+ 
+        /* Column Width */
+
+
+/* Not in use ..............
+        .main-content {
+              width: 60%;
+        }
+        .main-nav,
+        .main-sidebar {
+                width: 20%; 
+                flex: 1;                  
+        }
+............................. 
+*/ 
+
+        /* Column Reordering */  
+        .main-content{
+            -webkit-order: 5;
+            order: 5;
+        } 
+        .main-nav{
+            -webkit-order: 4;
+            order: 4; 
+        } 
+        .main-sidebar {
+            -webkit-order: 6;
+            order: 6;                  
+        } 
+
+        .header {  
+            -webkit-order: 6;
+            order: 6; 
+        }
+     
+
+        @import "compass/css3";
+
+        .flex-container {
+          padding: 1em;
+          margin: 0;
+          list-style: none;
+          
+          display: -webkit-box;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          
+          -webkit-flex-flow: row wrap;
+          justify-content: space-around;
+        }
+
+        .flex-item {
+          /*background-color: #333;*/
+          padding: 5px;
+          width: 200px;
+          height: 5em;
+          margin-top: 10px;
+          
+          font-family: Arial, Helvetica;
+          color: white;
+          font-weight: bold;
+          font-size: 3em;
+          text-align: center;
+          li {
+            margin: auto 0;
+          }
+        } 
+
+    /* ==== FEATURES ==== */
+
+    .border { border: 2px solid green;}
+
+    /* Basically an iframe wrapper */
+    .feature{ 
+        margin: 15px auto;
+        display:inline-block;
+    }
+
+    .x-scrolling{
+        overflow-y: hidden;
+        overflow-x: scrolling; 
+    }
+    .y-scrolling{
+        overflow-x: hidden;
+        overflow-y: scrolling; 
+    }
+
+    .scrolling{
+        overflow: hidden;
+    }
+
+    #dining { /* 1300 wide by 500 tall */
+        border: 0px none;
+        margin-left: -7px;
+        height: 1200px;
+        margin-top: -520px;
+        width:1200px;
+
+        /* Shrink to fit container */ 
+       zoom:0.9;
+        -webkit-transform:scale(0.9);
+        -webkit-transform-origin: 0 0;
+    }
+
+    #bus { 
+        border: 0px none;  
+        width:600px;
+        height: 1000px;
+        margin-left:-30px;
+        margin-top: -150px;
+    }
+
+    #bus-legend {
+        border: 0px none;  
+        width:1000px;
+        margin-left: -705px;
+        height: 800px;
+        margin-top: -130px;
+    } 
+
+    #maps {
+      display:block;
+        border: 0px none;  
+        width:900px; 
+        height: 900px; 
+    }
+            
+
+    /* ==== PADDING ==== */
+
+        /* content */ 
+        .main-content,
+        .main-sidebar,
+        .main-nav {
+            padding: 1em; 
+        }
+
+        .flex-item{
+            font-size: 1em; 
+        }
+
+        .header {
+            /* background-image: url("blue-sallyport.jpg");  
+            height: 500px; */  
+            /* background-color: purple; /* for testing */
+            background-repeat:no-repeat;
+            background-size:100% 100%; 
+        }
+
+        body {
+            padding: 2em;
+        } 
+
+        /* fonts*/ 
+        h1, h2 {
+            font-weight: normal;
+            font: 2em;
+            margin: 1em 0 1em 0;
+        }
+        h2 {
+            font-size: 1.5em;
+        }
+        p {
+            margin: 0 0 1em 0;
+        }
+ 
+
+    /* ==== COLORS & STYLING ==== */
+
+        html{
+          background-color:#333;
+          font-family: Baskerville, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman', serif; 
+        }
+
+        a, a:visited {
+          text-transform: uppercase;
+          text-decoration: none;  
+        }
+        
+        .main-content{
+            background: #aaa;
+        }
+
+        #main-nav {
+            background: #ccc; 
+        }
+
+        #main-nav  a { 
+              font-family: sans-serif;
+              font-weight: bold;
+              color: #666;
+        }
+
+       #main-nav a:hover{
+              color: #333;
+       }
+
+        #main-nav {
+            /*background-color: purple; */
+        }
+
+
+        .main-sidebar {
+            background: #ccc;
+        }  
+
+        
+        .flex-item  a, a:visited{
+              color: white; 
+        } 
+
+        .flex-item a:hover {
+            color: black;
+        }
+
+    /* ==== MISC. ELEMENTS ==== */
+
+    #page-title { 
+        font-family: Baskerville, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman', serif;
+        font-size: 5em;
+        top: 50px; 
+    }
+
+    /* Navbar */ 
+
+    #main-nav li{
+        display: inline; 
+        list-style-type: none;
+        padding: 2em;
+    }
+ 
+/* ......................... */
