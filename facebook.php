@@ -4,12 +4,13 @@
 ?>
 
 <?php
+	echo "<div class='col-lg-12'>";
 	echo "<h1 class='page-header'>{$page_title}</h1>";
 	 
 	$fb_page_id = "TheRiceThresher";
 	$profile_photo_src = "https://graph.facebook.com/{$fb_page_id}/picture?type=square";
 	$access_token = "784673474978555|yA9BXg2xD_g5J44A3Prp15Nvebs";
-	$fields = "id,message,picture,link,name,description,type,icon,created_time,from,object_id,likes";
+	$fields = "id,message,picture,link,name,description,type,icon,created_time,from,object_id,likes,comments";
 	$limit = 5;
 
 	$json_link = "https://graph.facebook.com/{$fb_page_id}/feed?access_token={$access_token}&fields={$fields}&limit={$limit}";
@@ -17,21 +18,31 @@
 	
 	$obj = json_decode($json, true);
 	$feed_item_count = count($obj['data']);
-
 	for($x=0; $x<$feed_item_count; $x++){
- 
+ 		
+
+ 	//To debug the JSON 
+ //    echo "----------------------------\n";
+ //    $read_JSON = $obj['data'][$x]; 
+	// var_dump($read_JSON);
+ //    echo "----------------------------\n";
+ 	
+
 	    // to get the post id
 	    $id = $obj['data'][$x]['id'];
-	    $post_id_arr = explode('_', $id);
+	    $post_id_arr = explode('_', $id); 
 	    $post_id = $post_id_arr[1];
 	 
 	    // user's custom message
 	    $message = $obj['data'][$x]['message'];
+	    $message_arr = explode('http://www.ricethresher.org', $message);
+	    $message_normal = $message_arr[0];
+	    $message_url = $message_arr[1];
 	 
 	    // picture from the link
 	    $picture = $obj['data'][$x]['picture'];
-	    $picture_url_arr = explode('&url=', $picture);
-	    $picture_url = urldecode($picture_url_arr[1]);
+	    // $picture_url_arr = explode('&url=', $picture);
+	    $picture_url = urldecode($picture);
 	 
 	    // link posted
 	    $link = $obj['data'][$x]['link'];
@@ -53,10 +64,12 @@
 	    // useful for photo
 	    $object_id = $obj['data'][$x]['object_id'];
 
-	    $likes = $obj['data'][$x]['likes']['count']; 
+	    $likes = count($obj['data'][$x]['likes']['data']);
+
+	    $comments =  count($obj['data'][$x]['comments']['data']);
 
 	    echo "<div class='row'>"; 
-	    echo "<div class='col-md-6'>";
+	        echo "<div class='col-md-5'>";
 	 
 	        echo "<div class='profile-info'>";
 	            echo "<div class='profile-photo'>";
@@ -75,45 +88,61 @@
 	                echo "<div class='time-ago'>{$ago_value}</div>";
 	            echo "</div>";
 	        echo "</div>"; 
-	        echo "<div class='profile-message'>{$message}</div>"; 
-            echo "<div>{$likes}</div>"; 
+	        echo "<div class='profile-message'>{$message_normal}<a href = 'http://www.ricethresher.org{$message_url}'>Check out the article.</a></div>";  
 	    echo "</div>";
+
+	    echo "<div class='col-md-7'>";
+		    echo "<a href='{$link}' target='_blank' class='post-link'>";
+		 
+		        echo "<div class='post-content'>";
+		 
+		            if($type=="status"){
+		                echo "<div class='post-status'>";
+		                    echo "View on Facebook";
+		                echo "</div>";
+		            }
+		 
+		            else if($type=="photo"){
+		                echo "<img src='https://graph.facebook.com/{$object_id}/picture' />"; 
+		            }
+		 
+		            else{
+		                if($picture_url){
+		                    echo "<div class='post-picture'>";
+		                        echo "<img src='{$picture_url}' />";
+		                    echo "</div>";
+		                }
+		 
+		                echo "<div class='post-info'>";
+		                    echo "<div class='post-info-name'>{$name}</div>";
+		                    echo "<div class='post-info-description'>{$description}</div>";
+		                echo "</div>";
+		            }
+		        echo "</div>";
+		    echo "</a>";
+
+    	echo "<div class='like-count-sum post-content' id = '{$id}' style='padding:.3em; margin:1em 0; cursor:pointer;'>";
+            echo "<div style='float:left; margin:0 .6em 0 0;'>";
+				echo "<span class='like-icon'></span>";
+				echo "{$likes}";
+			echo "</div>";
+			echo "<div style='float:left;'>";
+				echo "<span class='comment-icon'></span>";
+				echo "{$comments}";
+			echo "</div>";
+		echo "</div>";
+
+		echo "<div class='like-count-data' style='display: none;'>";
+		echo "</div>";
+	
+	echo "</div>";
+echo "</div>";
+		echo "</div>";
 	echo "</div>";
 	echo "<hr />";
 
-	}
-
-
-echo "<div class='col-md-6'>";
-    echo "<a href='{$link}' target='_blank' class='post-link'>";
- 
-        echo "<div class='post-content'>";
- 
-            if($type=="status"){
-                echo "<div class='post-status'>";
-                    echo "View on Facebook";
-                echo "</div>";
-            }
- 
-            else if($type=="photo"){
-                echo "<img src='https://graph.facebook.com/{$object_id}/picture' />";
-            }
- 
-            else{
-                if($picture_url){
-                    echo "<div class='post-picture'>";
-                        echo "<img src='{$picture_url}' />";
-                    echo "</div>";
-                }
- 
-                echo "<div class='post-info'>";
-                    echo "<div class='post-info-name'>{$name}</div>";
-                    echo "<div class='post-info-description'>{$description}</div>";
-                echo "</div>";
-            }
-        echo "</div>";
-    echo "</a>";
-echo "</div>"; 
+	} 
+echo "</div>";
 ?> 
  
 <!--[if lt IE 9]>
