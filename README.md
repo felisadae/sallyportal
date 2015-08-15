@@ -15,15 +15,15 @@ Features To-Do
   Should also scale/zoom in response to browser
 
 <h3>Summary of Contents</h3>
-<em>Static Links</em>
-Reserve rooms (fondy, RMC, colleges, classrooms)
-"Rice FB groups
-(Class of '16, '17, '18, '19, Selling, Apartment)"
-Schedule planner
-Academic Calendar
-<b>Atlas (Maps) + Building Codes</b>
-Owlspace
-Esther
-Main Rice page
-Student Association
-2nd tier: Duncan Book exchange
+<em>Static Links</em><br>
+Reserve rooms (fondy, RMC, colleges, classrooms)<br>
+"Rice FB groups<br>
+(Class of '16, '17, '18, '19, Selling, Apartment)"<br>
+Schedule planner<br>
+Academic Calendar<br>
+<b>Atlas (Maps) + Building Codes</b><br>
+Owlspace<br>
+Esther<br>
+Main Rice page<br>
+Student Association<br>
+2nd tier: Duncan Book exchange<br>
