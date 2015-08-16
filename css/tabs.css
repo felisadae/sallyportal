@@ -5,11 +5,9 @@
 }
 
 #tabs-wrapper { 
-	width: 94%;
+	width: 910px;
 	display:inline-block; 
-	margin-left: 3%;  
-	margin-right: 3%;
-	margin-top:3%;
+	margin:30px;
 
     h1 { 
 	text-align:center;
@@ -47,8 +45,8 @@
 }
 
 #tabs > ul > li{
-	margin:0 2px 0 0;
-	padding:7px 10px;
+	margin:0 2.5px 0 0;
+	padding:7px 66.56px;
 	display:block;
 	float:left;
 	color:#FFF;
@@ -57,7 +55,7 @@
 	user-select: none;
 	background: #C9C9C9; /* old browsers */
 	background: -moz-linear-gradient(top, #0C91EC 0%, #257AB6 100%); /* firefox */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0C91EC), color-stop(100%,#257AB6)); /* webkit */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#666), color-stop(70%,#555)); /* webkit */
 }
 
 #tabs > ul > li:hover{

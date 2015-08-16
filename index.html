@@ -5,14 +5,16 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 	 
-	    <title>The SallyPort</title> 
+	    <title>The SallyPortal</title> 
 
 	    <link href="css/portal.css" rel="stylesheet" type="text/css">
 	    <link href="css/tabs.css" rel="stylesheet" type="text/css"> 
-	    <link href="css/facebook.css" rel="stylesheet" type="text/css"> 
- 
- 	
-		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">	
+	    <link href="css/facebook.css" rel="stylesheet" type="text/css">  
+	    <link href="css/weather.css" rel="stylesheet" type="text/css"> 
+ 		<link href="css/mobile.css" rel="stylesheet" type="text/css">
+
+		<link rel="stylesheet" href="css/bootstrap.css">	
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 		<script type="text/javascript">
@@ -36,12 +38,21 @@
 
 	<body>
 
+ 
+	<div id = "circle-container">
+		<div class = "page-title" id="circle">
+			<h2>The Rice University</h2>
+			<h1>SallyPortal</h1>
+			<h3>a collection of useful campus links</h3>
+			<hr>
+			<h3 id = "date"></h3>
+		</div>
+	</div> 
 
-	<div class = "header">
-        <center><span id = "page-title">The SallyPortal
-        </span></center>
-        <!-- <img src="blue-sallyport.jpg"> -->
-    </div>
+	<script>
+		document.getElementById("date").innerHTML = new Date().toDateString();
+	</script>
+     
 
     <!-- Navbar -->
     <div class = "flex-container" id="main-nav" role="navigation">
@@ -55,55 +66,66 @@
       </center>
     </div>  
 
-    <!-- Collection of top links -->
-    <section class="main-content" role="main">
+    <!-- Collection of top links --> 
+    <section id="static-links" role="main">
           <ul class="flex-container">
-                <a target="_blank" href="http://www.rice.edu/"><span class="fa fa-home"></span><li class="flex-item">Rice Homepage</li></a>
-                <a target="_blank" href="https://esther.rice.edu/"><li class="flex-item">ESTHER</li></a>
-                <a target="_blank" href="http://www.ricethresher.org/"><li class="flex-item">Owlspace</li></a>
-                <a target="_blank" href="http://scheduleplanner.rice.edu/wsSchedule/Default.aspx"><li class="flex-item">Schedule Planner</li></a>
-                <a target="_blank" href="http://atlas.riceapps.org"><li class="flex-item">Campus Map</li></a>
-                <a target="_blank" href="https://rooms.library.rice.edu/Web/?"><li class="flex-item">Reserve Fondren Study Room</li></a>
-                <a target="_blank" href="https://registrar.rice.edu/content.aspx?id=2147483810"><li class="flex-item">Academic Calendar</li></a> 
+                <a target="_blank" href="http://www.rice.edu/"><span class="fa fa-home"></span><li class="flex-item link">Rice Homepage</li></a>
+                <a target="_blank" href="https://esther.rice.edu/"><li class="flex-item link">ESTHER</li></a>
+                <a target="_blank" href="http://owlspace-ccm.rice.edu/"><li class="flex-item link">Owlspace</li></a>
+                <a target="_blank" href="http://scheduleplanner.rice.edu/wsSchedule/Default.aspx"><li class="flex-item link">Schedule Planner</li></a>
+                <a target="_blank" href="http://atlas.riceapps.org"><li class="flex-item link">Campus Map</li></a>
+                <a target="_blank" href="https://rooms.library.rice.edu/Web/?"><li class="flex-item link">Reserve Fondren Study Room</li></a>
+                <a target="_blank" href="https://registrar.rice.edu/content.aspx?id=2147483810"><li class="flex-item link">Academic Calendar</li></a> 
+                <a target="_blank" href="https://registrar.rice.edu/content.aspx?id=2147483810"><li class="flex-item link">Building Codes</li></a> 
           </ul> 
     </section>  
 
-		
-		<div id="tabs-wrapper"> 
-			<div id="tabs-container">
-				<div id="tabs">
-				  <ul>  
-				    <li id="tabHeader_1"> Dining </li>
-				    <li id="tabHeader_2"> Bus Tracking </li>
-				    <li id="tabHeader_3"> Rice Thresher </li>
-				    <li id="tabHeader_4"> Building Codes </li>
-				  </ul>
-				</div>
+    <!-- Large content -->
+	<div class = "page-wrap">
+		<div class = "main-content">
+			<div id="tabs-wrapper"> 
+				<div id="tabs-container">
+					<div id="tabs">
+					  <ul>  
+					    <li id="tabHeader_1"> Dining </li>
+					    <li id="tabHeader_2"> Bus Tracking </li>
+					    <li id="tabHeader_3"> Rice Thresher </li>
+					    <li id="tabHeader_4"> Building Codes </li>
+					  </ul>
+					</div>
 
-				<div id="tabscontent">
-				    <div class="tabpage" onload = "preloader()" id="tabpage_1"> 
-				      <span class = "feature x-scrolling" style = "height:550px;">
-				          <section><iframe id = "dining" scrolling="no" src = "http://dining.rice.edu/"> </iframe> </section>
-				      </span> 
-				    </div>
+					<div id="tabscontent">
+					    <div class="tabpage" onload = "preloader()" id="tabpage_1">
+					      <h2>Dining</h2>
+					      <span class = "feature x-scrolling" style = "height:375px;">
+					          <section><iframe id = "dining" scrolling="no" src = "http://dining.rice.edu/"> </iframe> </section>
+					      </span> 
+					    </div>
 
-				    <div class="tabpage" id="tabpage_2"> </div> 
+					    <div class="tabpage" id="tabpage_2"> </div> 
 
-				    <div class="tabpage y-scrolling" id="tabpage_3"> </div>
+					    <div class="tabpage y-scrolling" id="tabpage_3"> </div>
 
-				    <div class = "tabpage y-scrolling" id = "tabpage_4"><object data="building-codes.pdf" type="application/pdf" width="100%" height="500px"><p>It appears you do not have a PDF plugin for this browser. No biggie... you can <a href="building-codes.pdf">click here to download the PDF file.</a></p></object> </div>
-				</div> <!-- END: tab content --> 
-			</div> <!-- END: tab container --> 
-		</div> <!-- END: tab wrapper --> 
- 	
+					    <div class = "tabpage y-scrolling" id = "tabpage_4"><object data="building-codes.pdf" type="application/pdf" width="100%" height="500px"><p>It appears you do not have a PDF plugin for this browser. No biggie... you can <a href="building-codes.pdf">click here to download the PDF file.</a></p></object> </div>
+					</div> <!-- END: tab content --> 
+				</div> <!-- END: tab container --> 
+			</div> <!-- END: tab wrapper --> 
+		</div> <!-- End: Main content -->
+		<div class = "main-sidebar">
+		 	<div id="weather-container">
+		 		<div id="weather"></div>
+		 	</div>
+		</div> <!-- End of sidebar -->
+	 </div>  <!-- End of page wrap -->
  	
 
 	</body>
 
 </html>
 
-
-
+<script src="js/jquery.simpleWeather.js"></script>
+<script src="js/weather-updater.js"></script> 
+<script src="js/moment.js"></script>
 
 <script type="text/javascript"> 
   var _gaq = _gaq || [];
