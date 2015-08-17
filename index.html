@@ -25,6 +25,8 @@
 
 		<script>
 		$(document).ready(function(){
+			// $("#circle-container").fadeIn("7000");
+
 			$("#tabHeader_2").click(function(){
 		        document.getElementById('tabpage_2').innerHTML = '<h2>Bus Tracking</h2><span class = "border feature scrolling" style = "width:560px; height: 400px; "><iframe id = "bus" src = "http://bus.rice.edu/full/"> </iframe> </span> <span class = "border feature y-scrolling" style = "width:275px; height: 400px; "><iframe id = "bus-legend" src = "http://bus.rice.edu/full/"> </iframe></span>';	
 		    });
@@ -44,7 +46,7 @@
 			<h2>The Rice University</h2>
 			<h1>SallyPortal</h1>
 			<h3>a collection of useful campus links</h3>
-			<hr>
+			<center><hr></center>
 			<h3 id = "date"></h3>
 		</div>
 	</div> 
@@ -55,33 +57,37 @@
      
 
     <!-- Navbar -->
-    <div class = "flex-container" id="main-nav" role="navigation">
+    <div class = "flex" id="main-nav" role="navigation">
       <center>
           <ul id = "nav-list"> 
             <li class><a href="#">Home</a></li> 
             <li class><a href="#">About</a></li>
-            <li class><a href="#">My Settings</a></li>
+            <li class><a href="#">Leave Feedback</a></li>
             <li class><a href="#">Log Out</a></li>
           </ul>
       </center>
     </div>  
 
-    <!-- Collection of top links --> 
+    <!-- Collection of toplinks --> 
     <section id="static-links" role="main">
-          <ul class="flex-container">
-                <a target="_blank" href="http://www.rice.edu/"><span class="fa fa-home"></span><li class="flex-item link">Rice Homepage</li></a>
-                <a target="_blank" href="https://esther.rice.edu/"><li class="flex-item link">ESTHER</li></a>
-                <a target="_blank" href="http://owlspace-ccm.rice.edu/"><li class="flex-item link">Owlspace</li></a>
-                <a target="_blank" href="http://scheduleplanner.rice.edu/wsSchedule/Default.aspx"><li class="flex-item link">Schedule Planner</li></a>
-                <a target="_blank" href="http://atlas.riceapps.org"><li class="flex-item link">Campus Map</li></a>
-                <a target="_blank" href="https://rooms.library.rice.edu/Web/?"><li class="flex-item link">Reserve Fondren Study Room</li></a>
-                <a target="_blank" href="https://registrar.rice.edu/content.aspx?id=2147483810"><li class="flex-item link">Academic Calendar</li></a> 
-                <a target="_blank" href="https://registrar.rice.edu/content.aspx?id=2147483810"><li class="flex-item link">Building Codes</li></a> 
+          <ul class="flex static-container">
+                <a target="_blank" href="http://www.rice.edu/">
+                	<!-- <span class="fa fa-home"></span> -->
+                	<li class="link">Rice Homepage</li></a>
+                <a target="_blank" href="https://esther.rice.edu/"><li class="link">ESTHER</li></a>
+                <a target="_blank" href="http://owlspace-ccm.rice.edu/"><li class="link">Owlspace</li></a>
+
+                <a target="_blank" href="https://registrar.rice.edu/content.aspx?id=2147483810"><li class="link">Academic Calendar</li></a> 
+                <a target="_blank" href="http://scheduleplanner.rice.edu/wsSchedule/Default.aspx"><li class="link">Schedule Planner</li></a>
+                <!-- <a target="_blank" href="http://atlas.riceapps.org"><li class="link">Campus Map</li></a> -->
+                <a target="_blank" href="https://rooms.library.rice.edu/Web/?"><li class="link">Reserve Library Study Room</li></a>
+                <a target="_blank" href="https://www.duncancollege.net/account/book-exchange/"><li class="link">Textbook Exchange</li></a> 
+                <a target="_blank" href="https://www.facebook.com/groups/643339369013402/1158860987461235/"><li class="link">Rice Students Selling Stuff</li></a>  
           </ul> 
     </section>  
 
     <!-- Large content -->
-	<div class = "page-wrap">
+	<div class = "flex page-wrap">
 		<div class = "main-content">
 			<div id="tabs-wrapper"> 
 				<div id="tabs-container">
@@ -111,11 +117,34 @@
 				</div> <!-- END: tab container --> 
 			</div> <!-- END: tab wrapper --> 
 		</div> <!-- End: Main content -->
-		<div class = "main-sidebar">
-		 	<div id="weather-container">
+		<div class = "flex main-sidebar">
+		 	<div class = "side-container">
 		 		<div id="weather"></div>
 		 	</div>
+		 	<div class="side-container">
+		 		<div id = "hours">
+			 		<h2>Hours</h2>
+			 		<ul>
+			 		<li>The Hoot(North/South)</li>
+			 		<li>Coffeehouse</li>
+			 		<li>Fondren Library</li>
+			 		<li>RMC Student Center</li>
+			 		<li>Sammy's</li>
+			 		<li>Brochstein</li>
+			 		<li>Recharge-U</li>
+			 		<li>the Rec</li>
+			 		<li>Student Health Center</li>
+			 		<li>Cashier's Office</li>
+			 		<li>Registrar's Office</li>
+			 		<!-- On Friday -->
+			 		<li id = "friday">Rice Village Bus</li>
+			 		<!-- On Saturday -->
+			 		<li id = "saturday">Target/Fiesta Shopping Shuttle</li>
+			 		</ul>
+		 		</div>
+		 	</div>
 		</div> <!-- End of sidebar -->
+
 	 </div>  <!-- End of page wrap -->
  	
 
