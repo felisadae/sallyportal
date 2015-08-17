@@ -6,9 +6,9 @@ Everything
 Features To-Do
 ----------------
 1. Facebook Feed
-  Need to get images to display
-  Need to get links in the text body to be actual links
-  Need to get right-hand boxes to display on the right
+  Need to get images to display<br>
+  Need to get links in the text body to be actual links<br>
+  Need to get right-hand boxes to display on the right<br>
 2. Bus Tracking
   Should scale/zoom in response to browser
 3. Dining
