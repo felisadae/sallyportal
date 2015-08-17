@@ -11,40 +11,39 @@
         font-style: normal;
     } 
 
+ 
+
     #weather {
       /*width: 425px;*/
       margin: 0px auto;
       text-align: center;
       text-transform: uppercase;
-      color:white;
+      /*color:white;*/
+      color: #333;
     }
 
     #weather h2 {
-      margin: 0 0 8px;
-      color: #fff;
-      font-size: 5em;
+      /*margin: 0 0 8px;*/
+      /*color: #fff;*/
+      font-size: 4em;
       font-weight: 300;
       text-align: center;
       text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
     }
 
     #weather ul {
-      margin: 0;
-      padding-right: 20px;
+      margin: 0px auto;
+      padding:0px 10px; 
     }
 
     #weather li { 
       /*background: #fff;
       background: rgba(255,255,255,0.90);
       padding: 10px 20px;*/
-      margin:10px 0px;
+      margin:0px 10px;
       display: inline-block;
       /*border-radius: 5px;*/
-    }
-
-    #weather .currently {
-      margin: 0 20px;
-    }
+    } 
 
     #weather .updated {
       opacity: 0.45;
@@ -53,12 +52,12 @@
     /* Weather Icon font */
     #weather h1 {
       margin: 0;
-      color: #fff;
+      /*color: #fff;*/
       font-family: 'weather';
-      font-size: 200px;
+      font-size: 150px;
       font-weight: normal;
       line-height: 1.0;
-      margin-bottom:-50px;
+      margin-bottom:-40px;
     }
     
     #weather h1.icon-0:before { content: ":"; }

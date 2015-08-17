@@ -1,3 +1,5 @@
+
+
 <?php
 	$page_title = "Facebook Page Feed";
 	date_default_timezone_set("US/Central");
@@ -17,16 +19,7 @@
 	$json = file_get_contents($json_link); 
 	
 	$obj = json_decode($json, true);
-	$feed_item_count = count($obj['data']);
-	for($x=0; $x<$feed_item_count; $x++){
- 		
-
- 	//To debug the JSON 
- //    echo "----------------------------\n";
- //    $read_JSON = $obj['data'][$x]; 
-	// var_dump($read_JSON);
- //    echo "----------------------------\n";
- 	
+	$feed_item_count = count($obj['data']); 
 
 	    // to get the post id
 	    $id = $obj['data'][$x]['id'];
@@ -184,4 +177,3 @@ echo "</div>";
 	    return $string ? implode(', ', $string) . ' ago' : 'just now';
 	}
 ?>
-

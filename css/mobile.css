@@ -1,5 +1,27 @@
+/* Flexbox changes: Side bar jumps to the top or bottom of main content */
 @media screen and (max-width: 1144px) {
     #weather-container {
         margin-left: 30px
     }
+    .main-sidebar { flex-direction:row;  }
+
+    #circle { left:33%; }
+
+            
 }
+
+/* The tab container doesn't fit past this point and needs to be resized */
+@media screen and (max-width: 977px) {
+	#circle { left:30vw; }
+}
+
+/* Circle centers better at 20% for some reason */ 
+@media screen and (max-width: 650px) {
+	#circle { left:20%; }
+}
+
+/* Smallest mobile size */ 
+@media screen and (max-width: 400px) {
+	#main-nav ul { padding: 0;}
+}
+

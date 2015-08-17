@@ -17,7 +17,7 @@
  
     .page-wrap { 
         flex-wrap:wrap-reverse;
-
+        -webkit-flex-wrap:reverse;
         max-width:1360px;
         margin: 0px auto;            
      }
@@ -28,6 +28,7 @@
 
     .main-sidebar {
         flex-direction:column; 
+        -webkit-flex-direction: column;
 
         min-width: 160px; 
         flex: 1;                  
@@ -79,7 +80,7 @@
           font-family: Arial, Helvetica;
           color: white;
           font-weight: bold;
-          font-size: 16px;
+          font-size: 10vmin;
           text-align: center; 
           /*background-color: #333;*/
       }
@@ -148,16 +149,25 @@
     /* ==== MISC. ELEMENTS POSITIONING ==== */
 
     /* Navbar */
-    #main-nav { padding:1em;}
+    #main-nav { padding:1em; }
 
-    #main-nav li{
-        display: inline; 
-        list-style-type: none;
-        padding: 2em;
+    #main-nav ul {
+        padding-left:20px;
         margin:0;
+        font-size: 3vmin;
     }
 
-     
+    #main-nav li {
+        display: inline; 
+        list-style-type: none;
+        padding: 1em;
+        margin:0;
+        border-right:1px solid #aaa;
+    }
+    #main-nav li:last-child {
+        border-right: 0px; 
+    }
+ 
     /* -------------- LANDING SCREEN -------------- */
 
 
