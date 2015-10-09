@@ -1,13 +1,16 @@
 // ec2 instance id: i-297ad3ec
 public dns: ec2-52-10-50-128.us-west-2.compute.amazonaws.com
 
+username: thresher@rice.edu
+password: RachelandMolly
+
 1) Install Homebrew
 
 2) sudo brew install putty (necessary?)
 
 3) chmod 400 portal-server.pem
 
-4) ssh -i "portal-server.pem" ec2-user@54.149.101.219
+4) ssh -i "portal-server.pem" ec2-user@52.10.50.128
 
 5) upload single file
 scp -i “portal-server.pem” portal-server.pem ec2-user@ec2-52-10-50-128.us-west-2.compute.amazonaws.com:~
@@ -18,5 +21,4 @@ scp -r -i portal-server.pem ../Documents/Thresher ec2-user@ec2-52-10-50-128.us-w
 http://docs.aws.amazon.com/gettingstarted/latest/wah-linux/getting-started-deploy-app.html
 
 note: /var/www/html is currently the active folder (the slash in front of var is important)
-
-scp -i ../../../../../Users/lisa/Documents/Thresher/portal-server.pem sallyport-background.jpg ec2-user@ec2-52-10-50-128.us-west-2.compute.amazonaws.com:~
+ 
