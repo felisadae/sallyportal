@@ -241,15 +241,78 @@
     } 
 
     /* Hours Feature */
-    #hours ul { 
-        padding: 0px 10px;
+    #hours,
+    #hours ul,
+    #hours li,
+    #hours a {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        list-style: none;
+        text-decoration: none;
+        line-height: 1;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 13px;
+        position: relative;
+    }
+    #hours a {
+      line-height: 1.2;
     }
 
-    #hours li {
-        list-style-type:none;
-        border-bottom: 1px dashed #ccc;
-        margin-bottom: 1em;
-        /*margin-right:1em; */
+    #hours {
+        /*width: 220px;*/
+        width:100%;
+    }
+    #hours > ul > li > a {
+        padding-right: 40px;
+        font-size: 30px;
+        font-weight: bold;
+        display: block;
+        background: rgba(200,200,200,0.3);
+        color: #555555;
+        border-bottom: 1px solid rgba(200,200,200,0.3);
+        position: relative;
+    }
+    #hours > ul > li > a > span {
+        padding: 11px;
+        display: block;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    #hours > ul > li > a:hover {
+      text-decoration: none;
+    }
+    #hours > ul > li.active {
+      border-bottom: none;
+    }
+    #hours > ul > li.active > a {
+      color: #555555;
+    }
+    #hours > ul > li.active > a span {
+      background: rgba(200,200,200,0);
+         font-weight: bold;
+    }
+    
+    #hours ul ul {
+        display: none;
+    }
+    #hours ul ul li {
+      border: 1px solid rgba(10,10,10,0.2);
+      border-top: 0;
+    }
+    #hours ul ul a {
+      padding: 10px;
+      display: block;
+      color: #777777;
+    }
+    #hours ul ul a:hover {
+      color: #000;
+    }
+    #hours ul ul li.odd {
+      background: #f4f4f4;
+    }
+    #hours ul ul li.even {
+      background: #fff;
     }
  
 /* ==== COLORS, STYLING, FONTS ==== */
