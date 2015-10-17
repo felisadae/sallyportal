@@ -21,9 +21,8 @@
 	    function preloader() { 
 	    }
 	    </script>	
- 
-
-		<script>
+ 		
+	    <script>
 		$(document).ready(function(){
 			// $("#circle-container").fadeIn("7000");
 
@@ -33,9 +32,41 @@
 		    $("#tabHeader_3").click(function(){
 		        $("#tabpage_3").load("facebook.php");
 		    });  
+
+		   
+			$('#hours ul ul li:odd').addClass('odd');
+			$('#hours ul ul li:even').addClass('even');
+
+	  		$('#hours > ul > li > a').click(function() {
+
+				var checkElement = $(this).next();
+
+				$('#hours li').removeClass('active');
+				$(this).closest('li').addClass('active'); 
+
+				if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+				  $(this).closest('li').removeClass('active');
+				  checkElement.slideUp('normal');
+				}
+				if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+				  $('#hours ul ul:visible').slideUp('normal');
+				  checkElement.slideDown('normal');
+				}
+
+				if($(this).closest('li').find('ul').children().length == 0) {
+				  return true;
+				} else {
+				  return false; 
+				}
+
+			});
 		});
+
+		
+
 		</script>
 		<script src="js/tabs.js"></script>  
+
 	</head>
 
 	<body>
@@ -124,30 +155,97 @@
 		 	<div class="side-container">
 		 		<div id = "hours">
 			 		<h2>Hours</h2>
+
 			 		<ul>
-			 		<li>The Hoot(North/South)</li>
-			 		<li>Coffeehouse</li>
-			 		<li>Fondren Library</li>
-			 		<li>RMC Student Center</li>
-			 		<li>Sammy's</li>
-			 		<li>Brochstein</li>
-			 		<li>Recharge-U</li>
-			 		<li>the Rec</li>
-			 		<li>Student Health Center</li>
-			 		<li>Cashier's Office</li>
-			 		<li>Registrar's Office</li>
-			 		<!-- On Friday -->
-			 		<li id = "friday">Rice Village Bus</li>
-			 		<!-- On Saturday -->
-			 		<li id = "saturday">Target/Fiesta Shopping Shuttle</li>
+			 		<li><a href='#'><span>The Hoot</span></a>
+			  			<ul>
+			         		<li><a><span>Mon-Wed: 8:00 pm - 1:00 am</span></a></li>
+			         		<li><a><span>Thu: 8:00 pm - 1:45 am</span></a></li>
+			         		<li><a><span>Fri: 8:30 pm - 9:00 am</span></a></li>
+			         		<li><a><span>Sun: 8:00 pm - 1:00 am</span></a></li>
+			      		</ul>
+			      	</li>
+			 		<li><a href='#'><span>Coffeehouse</span></a>
+			 			<ul>
+         					<li><a><span>Mon-Thu: 7:30 am - 1:00 am</span></a></li>
+         					<li><a><span>Fri: 7:30 am - 5:00 pm</span></a></li>
+         					<li><a><span>Sat: 10:00 am - 5:00 pm</span></a></li>
+         					<li><a><span>Sun: 2:00 pm - 1:00 am</span></a></li>
+      					</ul>
+
+			 		</li>
+			 		<li><a href='#'><span>Fondren Library</span></a>
+			 			<ul>
+         					<li><a><span>Mon-Thu: 24 hours</span></a></li>
+         					<li><a><span>Fri: Close at 10pm</span></a></li>
+         					<li><a><span>Sat: 9:00 am - 6:00 pm</span></a></li>
+         					<li><a><span>Sun: Open at 12pm</span></a></li>
+      					</ul>
+
+			 		</li>
+			 		<li><a href='#'><span>RMC Student Center</span></a>
+			 			<ul>
+         					<li><a><span>Mon-Thu: 7:00 am - 2:00 am</span></a></li>
+         					<li><a><span>Fri: 7:00 am - Midnight</span></a></li>
+         					<li><a><span>Sat: 9:00 am - Midnight</span></a></li>
+         					<li><a><span>Sun: Noon - 2:00 am</span></a></li>
+      					</ul>
+			 		</li>
+			 		<li><a href='#'><span>Sammy's</span></a>
+			 			<ul>
+         					<li><a><span>Mon-Fri: 11:00 am - 2:00 pm</span></a></li>
+         					<li><a><span>Sat-Sun: CLOSED</span></a></li>
+      					</ul>
+			 		</li>
+					<li><a href='#'><span>Brochstein</span></a>
+						<ul>
+         					<li><a><span>Mon-Fri: 7:30 am - 7:00 pm</span></a></li>
+         					<li><a><span>Sat-Sun: 9:00 am - 6:00 pm</span></a></li>
+      					</ul>
+					</li>
+					<li><a href='#'><span>Recharge-U</span></a>
+						<ul>
+         					<li><a><span>Mon-Thu: 8:00 am - 10:00 pm</span></a></li>
+         					<li><a><span>Fri: 8:00 am - 8:00 pm</span></a></li>
+         					<li><a><span>Sat: 10:00 am - 10:00 pm</span></a></li>
+						</ul>
+					</li>
+					<li><a href='#'><span>the Rec</span></a>
+						<ul>
+         					<li><a><span>Mon-Thu: 6:00 am - 12:00 am</span></a></li>
+         					<li><a><span>Fri: 6:00 am - 10:00 pm</span></a></li>
+         					<li><a><span>Sat: 8:00 am - 10:00 pm</span></a></li>
+         					<li><a><span>Sun: 10:00 am - 10:00 pm</span></a></li>
+						</ul>
+					</li>
+					<li><a href='#'><span>Student Health Center</span></a>
+						<ul>
+         					<li><a><span>Mon-Fri: 8:00 am - 5:00 pm</span></a></li>
+         					<li><a><span>Sat-Sun: Closed</span></a></li>
+						</ul>
+					</li>
+					<li><a href='#'><span>Cashier's Office</span></a>
+						<ul>
+         					<li><a><span>Mon-Fri: 8:30 am - 4:00 pm</span></a></li>
+         					<li><a><span>Sat-Sun: Closed</span></a></li>
+						</ul>
+					</li>
+					<li><a href='#'><span>Registrar's Office</span></a>
+						<ul>
+         					<li><a><span>Mon-Fri: 8:30 am - 4:00 pm</span></a></li>
+         					<li><a><span>Sat-Sun: Closed</span></a></li>
+						</ul>
+					</li>
+			 		
 			 		</ul>
+
+
 		 		</div>
 		 	</div>
 		</div> <!-- End of sidebar -->
 
 	 </div>  <!-- End of page wrap -->
- 	
-
+ 
 	</body>
 
 </html>
@@ -167,3 +265,5 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })(); 
 </script> 
+
+
